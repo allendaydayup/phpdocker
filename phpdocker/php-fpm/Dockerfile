@@ -75,22 +75,22 @@ RUN apt-get install libssl-dev -y \
 #    pecl install mcrypt-1.0.1 && \
 #    docker-php-ext-enable mcrypt
 
-RUN set -ex \
-    && apt-get update \
+#RUN set -ex \
+#    && apt-get update \
 #    && apt-get upgrade \
 #    && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install mysqli \
-    && docker-php-ext-install zip \
-    && docker-php-ext-install pdo \
-    && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install opcache \
-    && docker-php-ext-install dom \
-    && docker-php-ext-install simplexml \
-    && docker-php-ext-install xml \
-    && docker-php-ext-install xmlwriter \
-    && docker-php-ext-install xmlrpc
+#    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+#    && docker-php-ext-install -j$(nproc) gd \
+#    && docker-php-ext-install mysqli \
+#    && docker-php-ext-install zip \
+#    && docker-php-ext-install pdo \
+#    && docker-php-ext-install pdo_mysql \
+#    && docker-php-ext-install opcache \
+#    && docker-php-ext-install dom \
+#    && docker-php-ext-install simplexml \
+#    && docker-php-ext-install xml \
+#    && docker-php-ext-install xmlwriter \
+#    && docker-php-ext-install xmlrpc
 
 WORKDIR "/application"
 RUN chmod 777 /application
