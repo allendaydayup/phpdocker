@@ -22,17 +22,17 @@
 
 完成后，只需cd到项目根目录项目即可docker-compose up -d。这将初始化并启动所有容器，然后使它们在后台运行。
 
-## 暴露的端口 ##
+# 暴露的端口 #
 
 容器运行之后，可以通过 **`localhost`** 来访问你的应用。
 
 Service|Address outside containers
-------|---------|-----------
+------|---------
 Webserver|[localhost:8090](http://localhost:8090)
 Mailhog web interface|[localhost:8091](http://localhost:8091)
 MySQL|**host:** `localhost`; **port:** `8092`
 
-## 应用中暴露的端口 ##
+# 应用中主机及端口 #
 
 端口配置如下：
 
