@@ -69,11 +69,11 @@ RUN set -ex \
 RUN apt-get install libssl-dev -y \
         &&  rm -rf /tmp/pear
 
-RUN apt-get update -y && \
-    apt-get install -y libmcrypt-dev && \
-    pecl channel-update pecl.php.net && \
-    pecl install mcrypt-1.0.1 && \
-    docker-php-ext-enable mcrypt
+#RUN apt-get update -y && \
+#    apt-get install -y libmcrypt-dev && \
+#    pecl channel-update pecl.php.net && \
+#    pecl install mcrypt-1.0.1 && \
+#    docker-php-ext-enable mcrypt
 
 RUN set -ex \
     && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
