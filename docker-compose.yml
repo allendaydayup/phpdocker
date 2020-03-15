@@ -4,21 +4,21 @@ services:
 
     memcached:
       image: memcached:alpine
-      container_name: test-memcached
+      container_name: test1-memcached
 
     mailhog:
       image: mailhog/mailhog:latest
-      container_name: test-mailhog
+      container_name: test1-mailhog
       ports:
         - "8091:8025"
 
     redis:
       image: redis:alpine
-      container_name: test-redis
+      container_name: test1-redis
 
     mysql:
       image: mysql:5.7
-      container_name: test-mysql
+      container_name: test1-mysql
       working_dir: /application
       volumes:
         - .:/application
@@ -32,7 +32,7 @@ services:
 
     webserver:
       image: nginx:alpine
-      container_name: test-webserver
+      container_name: test1-webserver
       working_dir: /application
       volumes:
           - .:/application
@@ -42,7 +42,7 @@ services:
 
     php-fpm:
       build: phpdocker/php-fpm
-      container_name: test-php-fpm
+      container_name: test1-php-fpm
       working_dir: /application
       volumes:
         - .:/application
