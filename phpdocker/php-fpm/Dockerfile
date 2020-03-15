@@ -33,6 +33,11 @@ RUN apt-get update \
     && apt-get -y install vim \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
+# Install phpize
+RUN apt-get update \
+    && apt-get -y install php7.0-dev \
+    && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
 RUN set -ex \
         && cd /opt \
         && wget https://github.com/phpredis/phpredis/archive/3.0.0.zip -O redis-3.0.0.zip \
