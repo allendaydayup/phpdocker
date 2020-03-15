@@ -5,7 +5,7 @@
   * redis:alpine
   * mysql:5.7
   * nginx:alpine
-  * phpdocker/php-fpm
+  * php-fpm:7.4
 
 # 添加到您的项目 #
 
