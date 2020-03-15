@@ -46,7 +46,7 @@ RUN set -ex \
         && phpize \
         && ./configure \
         && make && make install \
-        && echo "extension=redis.so" | tee /usr/local/etc/php/conf.d/redis.ini
+        && echo "extension=redis.so" | tee /etc/php/7.4/fpm/conf.d//redis.ini
 
 RUN set -ex \
         && cd /opt \
@@ -56,15 +56,15 @@ RUN set -ex \
         && phpize \
         && ./configure \
         && make && make install \
-        && sh -c 'echo "extension=yaf.so";' | tee /usr/local/etc/php/conf.d/yaf.ini  \
-        && sh -c 'echo "[yaf]"' | tee -a /usr/local/etc/php/conf.d/yaf.ini \
-        && sh -c 'echo "yaf.environ = test"' | tee -a /usr/local/etc/php/conf.d/yaf.ini \
-        && sh -c 'echo "yaf.library = ../library"' | tee -a /usr/local/etc/php/conf.d/yaf.ini \
-        && sh -c 'echo "yaf.cache_config = 0"' | tee -a /usr/local/etc/php/conf.d/yaf.ini \
-        && sh -c 'echo "yaf.name_suffix = 1"' | tee -a /usr/local/etc/php/conf.d/yaf.ini \
-        && sh -c 'echo "yaf.use_namespace = 0"' | tee -a /usr/local/etc/php/conf.d/yaf.ini \
-        && sh -c 'echo "yaf.forward_limit = 5"' | tee -a /usr/local/etc/php/conf.d/yaf.ini \
-        && sh -c 'echo "yaf.use_spl_autoload = 0"' | tee -a /usr/local/etc/php/conf.d/yaf.ini
+        && sh -c 'echo "extension=yaf.so";' | tee /etc/php/7.4/fpm/conf.d//yaf.ini  \
+        && sh -c 'echo "[yaf]"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini \
+        && sh -c 'echo "yaf.environ = test"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini \
+        && sh -c 'echo "yaf.library = ../library"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini \
+        && sh -c 'echo "yaf.cache_config = 0"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini \
+        && sh -c 'echo "yaf.name_suffix = 1"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini \
+        && sh -c 'echo "yaf.use_namespace = 0"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini \
+        && sh -c 'echo "yaf.forward_limit = 5"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini \
+        && sh -c 'echo "yaf.use_spl_autoload = 0"' | tee -a /etc/php/7.4/fpm/conf.d//yaf.ini
 
 RUN apt-get install libssl-dev -y \
         &&  rm -rf /tmp/pear
