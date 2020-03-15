@@ -71,7 +71,7 @@ RUN apt-get install libssl-dev -y \
 
 RUN apt-get update -y && \
     apt-get install -y libmcrypt-dev && \
-    pecl channel-update pecl.php.net
+    pecl channel-update pecl.php.net && \
     pecl install mcrypt-1.0.1 && \
     docker-php-ext-enable mcrypt
 
